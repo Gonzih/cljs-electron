@@ -15,12 +15,15 @@
 
 (defonce proc (js/require "child_process"))
 
+(defn prepend-to-out [out]
+  (swap! shell-result (fn [v] (str out v))))
+
 (defn run-process []
   (let [[cmd & args] (string/split @command #"\s")
         p (.spawn proc cmd (clj->js args))]
-    (.on (.-stdout p)
-         "data"
-         #(swap! shell-result (fn [v] (str % v)))))
+    (.on p "error" prepend-to-out)
+    (.on (.-stderr p) "data" prepend-to-out)
+    (.on (.-stdout p) "data" prepend-to-out))
   (reset! command ""))
 
 (defn root-component []
