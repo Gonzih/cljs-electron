@@ -1,6 +1,7 @@
 (ns ui.core
   (:require [figwheel.client :as fw :include-macros true]
-            [reagent.core :as reagent :refer [atom]]))
+            [reagent.core :as reagent :refer [atom]]
+            [clojure.string :as string]))
 
 (enable-console-print!)
 
@@ -9,6 +10,18 @@
   :jsload-callback (fn [] (print "reloaded")))
 
 (defonce state (atom 0))
+(defonce shell-result (atom ""))
+(defonce command (atom ""))
+
+(defonce proc (js/require "child_process"))
+
+(defn run-process []
+  (let [[cmd & args] (string/split @command #"\s")
+        p (.spawn proc cmd (clj->js args))]
+    (.on (.-stdout p)
+         "data"
+         #(swap! shell-result (fn [v] (str % v)))))
+  (reset! command ""))
 
 (defn root-component []
   [:div
@@ -25,7 +38,20 @@
     {:on-click #(swap! state inc)}
     (str "You clicked me "
          @state
-         " times")]])
+         " times")]
+   [:p
+    [:form
+     {:on-submit (fn [e]
+                   (run-process)
+                   (.preventDefault e))}
+     [:input#command
+      {:type :text
+       :on-change (fn [e]
+                    (reset! command
+                            (.-value (.-target e))))
+       :value @command
+       :placeholder "type in shell command"}]]]
+   [:pre @shell-result]])
 
 (reagent/render
   [root-component]
