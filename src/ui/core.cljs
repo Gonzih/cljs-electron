@@ -12,12 +12,15 @@
 
 (defn root-component []
   [:div
-   [:h1 "Hello world"]
-   [:button
-    {:on-click #(swap! state inc)}
-    (str "You clicked me "
-         @state
-         " times")]])
+   [:p (str
+         "Node version is "
+         js/process.version)]
+   [:p (str
+         "Atom version is "
+         ((js->clj
+            js/process.versions)
+          "atom-shell"))]
+   [:h1 "Hello world!"]])
 
 (reagent/render
   [root-component]
