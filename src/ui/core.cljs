@@ -9,9 +9,9 @@
   :websocket-url   "ws://localhost:3449/figwheel-ws"
   :jsload-callback (fn [] (print "reloaded")))
 
-(defonce state (atom 0))
+(defonce state        (atom 0))
 (defonce shell-result (atom ""))
-(defonce command (atom ""))
+(defonce command      (atom ""))
 
 (defonce proc (js/require "child_process"))
 
