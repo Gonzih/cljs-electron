@@ -20,7 +20,12 @@
          ((js->clj
             js/process.versions)
           "atom-shell"))]
-   [:h1 "Hello world!"]])
+   [:h1 "Hello world!"]
+   [:button
+    {:on-click #(swap! state inc)}
+    (str "You clicked me "
+         @state
+         " times")]])
 
 (reagent/render
   [root-component]
