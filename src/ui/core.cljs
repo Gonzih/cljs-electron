@@ -8,7 +8,7 @@
   :websocket-url   "ws://localhost:3449/figwheel-ws"
   :jsload-callback (fn [] (print "reloaded")))
 
-(def state (atom 0))
+(defonce state (atom 0))
 
 (defn root-component []
   [:div
