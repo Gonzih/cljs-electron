@@ -1,7 +1,14 @@
-# Atom shell and clojurescript experiment
+# Clojurified AtomShell
 
-My attempt to recreate clojurescript dev workflow
-while developing desktop apps with atom-shell.
+![](https://raw.githubusercontent.com/Gonzih/cljs-figwheel-atom-shell-hello-world/master/demo.gif)
+
+My attempt to recreate ClojureScript development workflow while developing desktop apps with atom-shell.
+
+## What is currently included
+
+* ClojureScript (init script and ui code)
+* Figwheel for interactive development (+ serving of webjars)
+* Reagent for UI
 
 ## Running it
 
