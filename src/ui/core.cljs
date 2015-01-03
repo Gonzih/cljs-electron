@@ -3,7 +3,7 @@
             [reagent.core :as reagent :refer [atom]]
             [clojure.string :as string :refer [split-lines]]))
 
-(defn join-lines [v] (string/join "\n" v))
+(def join-lines (partial string/join "\n"))
 
 (enable-console-print!)
 
