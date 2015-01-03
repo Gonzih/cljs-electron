@@ -13,6 +13,6 @@ My attempt to recreate ClojureScript development workflow while developing deskt
 ## Running it
 
 ```shell
-foreman start # will compile cljs
-atom-shell .
+foreman start & # compile cljs and start figwheel
+atom-shell .    # start atom-shell
 ```
