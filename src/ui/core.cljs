@@ -1,7 +1,9 @@
 (ns ui.core
   (:require [figwheel.client :as fw :include-macros true]
             [reagent.core :as reagent :refer [atom]]
-            [clojure.string :as string]))
+            [clojure.string :as string :refer [split-lines]]))
+
+(defn join-lines [v] (string/join "\n" v))
 
 (enable-console-print!)
 
@@ -15,15 +17,16 @@
 
 (defonce proc (js/require "child_process"))
 
-(defn prepend-to-out [out]
-  (swap! shell-result (fn [v] (str out v))))
+(defn append-to-out [out]
+  (swap! shell-result str out))
 
 (defn run-process []
   (let [[cmd & args] (string/split @command #"\s")
         p (.spawn proc cmd (clj->js args))]
-    (.on p "error" prepend-to-out)
-    (.on (.-stderr p) "data" prepend-to-out)
-    (.on (.-stdout p) "data" prepend-to-out))
+    (.on p "error" (comp append-to-out
+                         #(str % "\n")))
+    (.on (.-stderr p) "data" append-to-out)
+    (.on (.-stdout p) "data" append-to-out))
   (reset! command ""))
 
 (defn root-component []
@@ -54,7 +57,7 @@
                             (.-value (.-target e))))
        :value @command
        :placeholder "type in shell command"}]]]
-   [:pre @shell-result]])
+   [:pre (join-lines (take 100 (reverse (split-lines @shell-result))))]])
 
 (reagent/render
   [root-component]
