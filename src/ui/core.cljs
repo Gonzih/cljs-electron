@@ -36,9 +36,10 @@
          js/process.version)]
    [:p (str
          "Atom version is "
-         ((js->clj
-            js/process.versions)
-          "atom-shell"))]
+         ((js->clj js/process.versions) "atom-shell"))]
+   [:p (str
+         "Chrome version is "
+         ((js->clj js/process.versions) "chrome"))]
    [:h1 "Hello world!"]
    [:button
     {:on-click #(swap! state inc)}
