@@ -1,6 +1,6 @@
 # Clojurified Electron
 
-![](https://raw.githubusercontent.com/Gonzih/cljs-figwheel-electron-hello-world/master/demo.gif)
+![](https://raw.githubusercontent.com/Gonzih/cljs-electron/master/demo.gif)
 
 My attempt to recreate ClojureScript development workflow while developing desktop apps with [electron](http://electron.atom.io/).
 
