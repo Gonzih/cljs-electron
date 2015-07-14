@@ -1,4 +1,4 @@
-(ns atom.core)
+(ns electron.core)
 
 (def app            (js/require "app"))
 (def browser-window (js/require "browser-window"))

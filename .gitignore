@@ -1,2 +1,4 @@
 target/
 resources/
+*-init.clj
+figwheel_server.log

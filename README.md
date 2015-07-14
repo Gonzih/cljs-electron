@@ -1,8 +1,8 @@
-# Clojurified AtomShell
+# Clojurified Electron
 
-![](https://raw.githubusercontent.com/Gonzih/cljs-figwheel-atom-shell-hello-world/master/demo.gif)
+![](https://raw.githubusercontent.com/Gonzih/cljs-figwheel-electron-hello-world/master/demo.gif)
 
-My attempt to recreate ClojureScript development workflow while developing desktop apps with atom-shell.
+My attempt to recreate ClojureScript development workflow while developing desktop apps with [electron](http://electron.atom.io/).
 
 ## What is currently included
 
@@ -13,6 +13,9 @@ My attempt to recreate ClojureScript development workflow while developing deskt
 ## Running it
 
 ```shell
-foreman start & # compile cljs and start figwheel
-atom-shell .    # start atom-shell
+gem install foreman              # install foreman gem (see Procfile)
+npm install electron-prebuilt -g # install electrob binaries
+
+foreman start &                  # compile cljs and start figwheel
+electron .                       # start electron
 ```
