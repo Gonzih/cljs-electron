@@ -2,7 +2,7 @@
   :source-paths ["src/tools"]
   :description "A hello, world application for electron"
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "0.0-3308"]
+                 [org.clojure/clojurescript "1.7.28"]
                  [figwheel "0.3.7"]
                  [reagent "0.5.0"]
                  [ring/ring-core "1.4.0"]]
