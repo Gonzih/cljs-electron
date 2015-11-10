@@ -3,11 +3,11 @@
   :description "A hello world application for electron"
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.170"]
-                 [figwheel "0.3.7"]
+                 [figwheel "0.5.0-SNAPSHOT"]
                  [reagent "0.5.0"]
                  [ring/ring-core "1.4.0"]]
-  :plugins [[lein-cljsbuild "1.0.3"]
-            [lein-figwheel "0.3.7"]]
+  :plugins [[lein-cljsbuild "1.1.1"]
+            [lein-figwheel "0.5.0-SNAPSHOT"]]
   :cljsbuild
   {:builds
    [{:source-paths ["electron_src"]
