@@ -19,3 +19,12 @@ npm install electron-prebuilt -g # install electrob binaries
 foreman start &                  # compile cljs and start figwheel
 electron .                       # start electron
 ```
+
+## Releasing
+
+```
+lein cljsbuild once frontend-release # compile ui code
+lein cljsbuild once electron-release # compile electron initialization code
+
+electron .                           # start electron
+```
