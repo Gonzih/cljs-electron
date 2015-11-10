@@ -35,7 +35,7 @@
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-release-out"
                 :source-map "resources/public/js/ui-core.js.map"
-                :optimizations :advanced
+                :optimizations :simple
                 :cache-analysis true}}]}
   :figwheel {:http-server-root "public"
              :ring-handler tools.figwheel-middleware/app
