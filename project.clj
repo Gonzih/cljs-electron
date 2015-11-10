@@ -1,8 +1,8 @@
 (defproject hello-electron "0.1.0-SNAPSHOT"
-  :source-paths ["src/tools"]
+  :source-paths ["src"]
   :description "A hello world application for electron"
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.28"]
+                 [org.clojure/clojurescript "1.7.170"]
                  [figwheel "0.3.7"]
                  [reagent "0.5.0"]
                  [ring/ring-core "1.4.0"]]
@@ -10,27 +10,27 @@
             [lein-figwheel "0.3.7"]]
   :cljsbuild
   {:builds
-   [{:source-paths ["src/electron"]
+   [{:source-paths ["electron_src"]
      :id "electron-dev"
      :compiler {:output-to "resources/main.js"
                 :optimizations :simple
                 :pretty-print true
                 :cache-analysis true}}
-    {:source-paths ["src/ui" "src/dev"]
+    {:source-paths ["ui_src" "dev_src"]
      :id "frontend-dev"
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-out"
                 :source-map "resources/public/js/ui-core.js.map"
                 :optimizations :none
                 :cache-analysis true}}
-    {:source-paths ["src/electron"]
+    {:source-paths ["electron_src"]
      :id "electron-release"
      :compiler {:output-to "resources/main.js"
                 :output-dir ""
                 :optimizations :simple
                 :pretty-print true
                 :cache-analysis true}}
-    {:source-paths ["src/ui" "src/dev"]
+    {:source-paths ["ui_src" "dev_src"]
      :id "frontend-release"
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-release-out"
@@ -38,5 +38,5 @@
                 :optimizations :advanced
                 :cache-analysis true}}]}
   :figwheel {:http-server-root "public"
-             :ring-handler figwheel-middleware/app
+             :ring-handler tools.figwheel-middleware/app
              :server-port 3449})

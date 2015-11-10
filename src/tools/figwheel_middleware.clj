@@ -1,4 +1,4 @@
-(ns figwheel-middleware
+(ns tools.figwheel-middleware
   (:require [ring.middleware.resource :refer (wrap-resource)]))
 
 (defn handler [request]

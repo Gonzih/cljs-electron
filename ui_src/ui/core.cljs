@@ -1,15 +1,10 @@
 (ns ui.core
-  (:require [figwheel.client :as fw :include-macros true]
-            [reagent.core :as reagent :refer [atom]]
+  (:require [reagent.core :as reagent :refer [atom]]
             [clojure.string :as string :refer [split-lines]]))
 
 (def join-lines (partial string/join "\n"))
 
 (enable-console-print!)
-
-(fw/watch-and-reload
-  :websocket-url   "ws://localhost:3449/figwheel-ws"
-  :jsload-callback (fn [] (print "reloaded")))
 
 (defonce state        (atom 0))
 (defonce shell-result (atom ""))
