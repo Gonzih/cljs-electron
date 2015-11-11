@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Gonzih/cljs-electron.svg?branch=master)](https://travis-ci.org/Gonzih/cljs-electron)
+
 # Clojurified Electron
 
 ![](https://raw.githubusercontent.com/Gonzih/cljs-electron/master/demo.gif)
