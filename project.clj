@@ -26,8 +26,10 @@
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-out"
                 :source-map "resources/public/js/ui-core.js.map"
+                :asset-path "js/ui-out/"
                 :optimizations :none
-                :cache-analysis true}}
+                :cache-analysis true
+                :main "ui.core"}}
     {:source-paths ["electron_src"]
      :id "electron-release"
      :compiler {:output-to "resources/main.js"
@@ -40,7 +42,8 @@
                 :output-dir "resources/public/js/ui-release-out"
                 :source-map "resources/public/js/ui-core.js.map"
                 :optimizations :simple
-                :cache-analysis true}}]}
+                :cache-analysis true
+                :main "ui.core"}}]}
   :figwheel {:http-server-root "public"
              :ring-handler tools.figwheel-middleware/app
              :server-port 3449})
