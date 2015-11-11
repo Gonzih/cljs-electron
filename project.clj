@@ -8,6 +8,11 @@
                  [ring/ring-core "1.4.0"]]
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-figwheel "0.5.0-SNAPSHOT"]]
+
+  :clean-targets ^{:protect false} ["resources/main.js"
+                                    "resources/public/js/ui-core.js"
+                                    "resources/public/js/ui-core.js.map"
+                                    "resources/public/js/ui-out"]
   :cljsbuild
   {:builds
    [{:source-paths ["electron_src"]
