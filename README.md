@@ -22,7 +22,7 @@ electron .                       # start electron
 
 ## Releasing
 
-```
+```shell
 lein cljsbuild once frontend-release # compile ui code
 lein cljsbuild once electron-release # compile electron initialization code
 
