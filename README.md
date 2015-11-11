@@ -28,5 +28,7 @@ electron .                       # start electron
 lein cljsbuild once frontend-release # compile ui code
 lein cljsbuild once electron-release # compile electron initialization code
 
-electron .                           # start electron
+electron .                           # start electron to test that everything works
 ```
+
+After that you can follow [distribution guide for the electron.](https://github.com/atom/electron/blob/master/docs/tutorial/application-distribution.md)
