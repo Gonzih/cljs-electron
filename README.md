@@ -16,7 +16,7 @@ My attempt to recreate ClojureScript development workflow while developing deskt
 
 ```shell
 gem install foreman              # install foreman gem (see Procfile)
-npm install electron-prebuilt -g # install electrob binaries
+npm install electron-prebuilt -g # install electron binaries
 
 foreman start &                  # compile cljs and start figwheel
 electron .                       # start electron
