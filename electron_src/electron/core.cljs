@@ -14,7 +14,13 @@
   (.loadURL @main-window (str "file://" js/__dirname "/public/index.html"))
   (.on @main-window "closed" #(reset! main-window nil)))
 
-(.start crash-reporter)
+(.start crash-reporter
+        (clj->js
+          {:companyName "MyAwesomeCompany"
+           :productName "MyAwesomeApp"
+           :submitURL "https://example.com/submit-url"
+           :autoSubmit false}))
+
 (.on app "window-all-closed" #(when-not (= js/process.platform "darwin")
                                 (.quit app)))
 (.on app "ready" init-browser)
