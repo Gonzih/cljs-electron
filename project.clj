@@ -1,13 +1,13 @@
 (defproject hello-electron "0.1.0-SNAPSHOT"
   :source-paths ["src"]
   :description "A hello world application for electron"
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.170"]
-                 [figwheel "0.5.0-SNAPSHOT"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.8.40"]
+                 [figwheel "0.5.2"]
                  [reagent "0.5.1"]
                  [ring/ring-core "1.4.0"]]
   :plugins [[lein-cljsbuild "1.1.1"]
-            [lein-figwheel "0.5.0-SNAPSHOT"]]
+            [lein-figwheel "0.5.2"]]
 
   :clean-targets ^{:protect false} ["resources/main.js"
                                     "resources/public/js/ui-core.js"
@@ -25,7 +25,7 @@
      :id "frontend-dev"
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-out"
-                :source-map "resources/public/js/ui-core.js.map"
+                :source-map true
                 :asset-path "js/ui-out"
                 :optimizations :none
                 :cache-analysis true
@@ -40,7 +40,7 @@
      :id "frontend-release"
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-release-out"
-                :source-map "resources/public/js/ui-core.js.map"
+                :source-map true
                 :optimizations :simple
                 :cache-analysis true
                 :main "ui.core"}}]}
