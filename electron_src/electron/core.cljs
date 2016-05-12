@@ -1,8 +1,9 @@
 (ns electron.core)
 
-(def app            (js/require "app"))
-(def browser-window (js/require "browser-window"))
-(def crash-reporter (js/require "crash-reporter"))
+(def electron       (js/require "electron"))
+(def app            (.-app electron))
+(def browser-window (.-BrowserWindow electron))
+(def crash-reporter (.-crashReporter electron))
 
 (def main-window (atom nil))
 
