@@ -1,8 +1,9 @@
 (ns electron.core)
 
-(def app            (js/require "app"))
-(def browser-window (js/require "browser-window"))
-(def crash-reporter (js/require "crash-reporter"))
+(def electron       (js/require "electron"))
+(def app            (.-app electron))
+(def browser-window (.-BrowserWindow electron))
+(def crash-reporter (.-crashReporter electron))
 
 (def main-window (atom nil))
 
@@ -17,10 +18,10 @@
 ; CrashReporter can just be omitted
 (.start crash-reporter
         (clj->js
-          {:companyName "MyAwesomeCompany"
-           :productName "MyAwesomeApp"
-           :submitURL "https://example.com/submit-url"
-           :autoSubmit false}))
+         {:companyName "MyAwesomeCompany"
+          :productName "MyAwesomeApp"
+          :submitURL "https://example.com/submit-url"
+          :autoSubmit false}))
 
 (.on app "window-all-closed" #(when-not (= js/process.platform "darwin")
                                 (.quit app)))
