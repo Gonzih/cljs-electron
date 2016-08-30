@@ -56,4 +56,4 @@
 
 (reagent/render
   [root-component]
-  (.-body js/document))
+  (js/document.getElementById "app-container"))
