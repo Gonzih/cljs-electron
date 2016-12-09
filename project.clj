@@ -6,8 +6,8 @@
                  [figwheel "0.5.8"]
                  [reagent "0.6.0"]
                  [ring/ring-core "1.5.0"]]
-  :plugins [[lein-cljsbuild "1.1.1"]
-            [lein-figwheel "0.5.2"]]
+  :plugins [[lein-cljsbuild "1.1.5"]
+            [lein-figwheel "0.5.8"]]
 
   :clean-targets ^{:protect false} ["resources/main.js"
                                     "resources/public/js/ui-core.js"
