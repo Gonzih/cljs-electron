@@ -32,3 +32,8 @@ electron .                           # start electron to test that everything wo
 ```
 
 After that you can follow [distribution guide for the electron.](https://github.com/atom/electron/blob/master/docs/tutorial/application-distribution.md)
+
+The easiest way to package an electron app is by using [electron-packager](https://github.com/maxogden/electron-packager):
+```shell
+electron-packager . HelloWorld --platform=darwin --arch=x64 --version=1.4.8
+```
