@@ -18,6 +18,7 @@
    [{:source-paths ["electron_src"]
      :id "electron-dev"
      :compiler {:output-to "resources/main.js"
+                :output-dir "resources/public/js/electron-dev"
                 :optimizations :simple
                 :pretty-print true
                 :cache-analysis true}}
@@ -33,6 +34,7 @@
     {:source-paths ["electron_src"]
      :id "electron-release"
      :compiler {:output-to "resources/main.js"
+                :output-dir "resources/public/js/electron-release"
                 :optimizations :simple
                 :pretty-print true
                 :cache-analysis true}}
