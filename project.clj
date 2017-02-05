@@ -47,5 +47,6 @@
                 :cache-analysis true
                 :main "ui.core"}}]}
   :figwheel {:http-server-root "public"
+             :css-dirs ["resources/public/css"]
              :ring-handler tools.figwheel-middleware/app
              :server-port 3449})
