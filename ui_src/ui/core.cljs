@@ -44,14 +44,14 @@
     (str "Clicked " @state " times")]
    [:p
     [:form
-     {:on-submit (fn [e]
+     {:on-submit (fn [^js/Event e]
                    (.preventDefault e)
                    (run-process))}
      [:input#command
       {:type :text
-       :on-change (fn [e]
+       :on-change (fn [^js/Event e]
                     (reset! command
-                            (.-value (.-target e))))
+                            ^js/String (.-value (.-target e))))
        :value @command
        :placeholder "type in shell command"}]]]
    [:pre (join-lines (take 100 (reverse (split-lines @shell-result))))]])
