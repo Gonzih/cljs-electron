@@ -1,5 +1,7 @@
 (ns electron.core)
 
+(set! *warn-on-infer* true)
+
 (def electron       (js/require "electron"))
 (def app            (.-app electron))
 (def browser-window (.-BrowserWindow electron))

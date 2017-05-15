@@ -35,16 +35,18 @@
      :id "electron-release"
      :compiler {:output-to "resources/main.js"
                 :output-dir "resources/public/js/electron-release"
-                :optimizations :simple
+                :optimizations :advanced
                 :pretty-print true
-                :cache-analysis true}}
+                :cache-analysis true
+                :infer-externs true}}
     {:source-paths ["ui_src"]
      :id "frontend-release"
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-release-out"
                 :source-map "resources/public/js/ui-core.js.map"
-                :optimizations :simple
+                :optimizations :advanced
                 :cache-analysis true
+                :infer-externs true
                 :main "ui.core"}}]}
   :figwheel {:http-server-root "public"
              :css-dirs ["resources/public/css"]
