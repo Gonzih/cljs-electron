@@ -2,12 +2,12 @@
   :source-paths ["src"]
   :description "A hello world application for electron"
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.293"]
-                 [figwheel "0.5.8"]
-                 [reagent "0.6.0"]
-                 [ring/ring-core "1.5.0"]]
+                 [org.clojure/clojurescript "1.9.542"]
+                 [figwheel "0.5.10"]
+                 [reagent "0.6.1"]
+                 [ring/ring-core "1.6.1"]]
   :plugins [[lein-cljsbuild "1.1.5"]
-            [lein-figwheel "0.5.8"]]
+            [lein-figwheel "0.5.10"]]
 
   :clean-targets ^{:protect false} ["resources/main.js"
                                     "resources/public/js/ui-core.js"
