@@ -11,6 +11,7 @@ My attempt to recreate ClojureScript development workflow while developing deskt
 * ClojureScript (init script and ui code)
 * Figwheel for interactive development (+ serves webjars)
 * Reagent for UI
+* Advanced compilation with externs inference in release compilation targets
 
 ## Running it
 
