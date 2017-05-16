@@ -1,4 +1,6 @@
 (defproject hello-electron "0.1.0-SNAPSHOT"
+  :license {:name "The MIT License"
+            :url "https://opensource.org/licenses/MIT"}
   :source-paths ["src"]
   :description "A hello world application for electron"
   :dependencies [[org.clojure/clojure "1.8.0"]
