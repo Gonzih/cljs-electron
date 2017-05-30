@@ -8,4 +8,4 @@
 
 (def app
   ;; static resources in resources/public
-  ; (wrap-resource "public"))
+  (wrap-resource handler "public"))
