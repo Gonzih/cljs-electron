@@ -2,8 +2,6 @@
   (:require [reagent.core :as reagent :refer [atom]]
             [clojure.string :as string :refer [split-lines]]))
 
-(set! *warn-on-infer* true)
-
 (def join-lines (partial string/join "\n"))
 
 (enable-console-print!)
