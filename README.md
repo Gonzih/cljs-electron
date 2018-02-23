@@ -35,5 +35,5 @@ The easiest way to package an electron app is by using [electron-packager](https
 
 ```shell
 npm install electron-packager -g                                            # install electron packager
-electron-packager . HelloWorld --platform=darwin --arch=x64 --version=1.4.8 # package it!
+electron-packager . HelloWorld --platform=darwin --arch=x64 --electron-version=1.4.8 # package it!
 ```
