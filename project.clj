@@ -6,7 +6,7 @@
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.238"]
                  [figwheel "0.5.15"]
-                 [reagent "0.6.1"]
+                 [reagent "0.7.0"]
                  [ring/ring-core "1.6.3"]]
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-figwheel "0.5.15"]
