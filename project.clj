@@ -3,13 +3,13 @@
             :url "https://opensource.org/licenses/MIT"}
   :source-paths ["src"]
   :description "A hello world application for electron"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.542"]
-                 [figwheel "0.5.10"]
-                 [reagent "0.6.1"]
-                 [ring/ring-core "1.6.1"]]
-  :plugins [[lein-cljsbuild "1.1.5"]
-            [lein-figwheel "0.5.10"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojurescript "1.10.238"]
+                 [figwheel "0.5.15"]
+                 [reagent "0.7.0"]
+                 [ring/ring-core "1.6.3"]]
+  :plugins [[lein-cljsbuild "1.1.7"]
+            [lein-figwheel "0.5.15"]
             [lein-cooper "1.2.2"]]
 
   :clean-targets ^{:protect false} ["resources/main.js"
@@ -38,8 +38,8 @@
      :id "electron-release"
      :compiler {:output-to "resources/main.js"
                 :output-dir "resources/public/js/electron-release"
+                :externs ["cljs-externs/common.js"]
                 :optimizations :advanced
-                :pretty-print true
                 :cache-analysis true
                 :infer-externs true}}
     {:source-paths ["ui_src"]
@@ -47,9 +47,11 @@
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-release-out"
                 :source-map "resources/public/js/ui-core.js.map"
+                :externs ["cljs-externs/common.js"]
                 :optimizations :advanced
                 :cache-analysis true
                 :infer-externs true
+                :process-shim false
                 :main "ui.core"}}]}
   :figwheel {:http-server-root "public"
              :css-dirs ["resources/public/css"]
