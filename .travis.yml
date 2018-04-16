@@ -1,5 +1,6 @@
 jdk:
   - oraclejdk8
+  - openjdk8
 
 language: clojure
 script: lein do clean, cljsbuild once electron-dev, cljsbuild once frontend-dev, clean, cljsbuild once electron-release, cljsbuild once frontend-release
