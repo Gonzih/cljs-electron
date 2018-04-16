@@ -38,8 +38,8 @@
      :id "electron-release"
      :compiler {:output-to "resources/main.js"
                 :output-dir "resources/public/js/electron-release"
+                :externs ["cljs-externs/common.js" "cljs-externs/node-process.js"]
                 :optimizations :advanced
-                :pretty-print true
                 :cache-analysis true
                 :infer-externs true}}
     {:source-paths ["ui_src"]
@@ -47,6 +47,7 @@
      :compiler {:output-to "resources/public/js/ui-core.js"
                 :output-dir "resources/public/js/ui-release-out"
                 :source-map "resources/public/js/ui-core.js.map"
+                :externs ["cljs-externs/common.js" "cljs-externs/node-process.js"]
                 :optimizations :advanced
                 :cache-analysis true
                 :infer-externs true

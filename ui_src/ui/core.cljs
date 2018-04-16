@@ -9,6 +9,7 @@
 (defonce state        (atom 0))
 (defonce shell-result (atom ""))
 (defonce command      (atom ""))
+(defonce process      (js/require "process"))
 
 (defonce proc (js/require "child_process"))
 
@@ -34,9 +35,9 @@
     [:img.cljs {:src "img/cljs-logo.svg"}]
     [:img.reagent {:src "img/reagent-logo.png"}]]
    [:pre "Versions:"
-    [:p (str "Node     " js/process.version)]
-    [:p (str "Electron " ((js->clj js/process.versions) "electron"))]
-    [:p (str "Chromium " ((js->clj js/process.versions) "chrome"))]]
+    [:p (str "Node     " process.version)]
+    [:p (str "Electron " ((js->clj process.versions) "electron"))]
+    [:p (str "Chromium " ((js->clj process.versions) "chrome"))]]
    [:button
     {:on-click #(swap! state inc)}
     (str "Clicked " @state " times")]
