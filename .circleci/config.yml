@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+    environment:
+      LEIN_ROOT: nbd
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - run: lein do clean, cljsbuild once electron-dev, cljsbuild once frontend-dev, clean, cljsbuild once electron-release, cljsbuild once frontend-release
