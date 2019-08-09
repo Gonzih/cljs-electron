@@ -3,15 +3,15 @@
             :url "https://opensource.org/licenses/MIT"}
   :source-paths ["src"]
   :description "A hello world application for electron"
-  :dependencies [[org.clojure/clojure "1.9.0"]
-                 [org.clojure/clojurescript "1.10.238"]
-                 [figwheel "0.5.15"]
+  :dependencies [[org.clojure/clojure "1.10.0"]
+                 [org.clojure/clojurescript "1.10.520"]
+                 [figwheel "0.5.19"]
                  [figwheel-sidecar "0.5.18"]
                  [cider/piggieback "0.4.0"]
-                 [reagent "0.7.0"]
-                 [ring/ring-core "1.6.3"]]
+                 [reagent "0.8.1"]
+                 [ring/ring-core "1.7.1"]]
   :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-figwheel "0.5.15"]
+            [lein-figwheel "0.5.19"]
             [lein-cooper "1.2.2"]]
 
   :clean-targets ^{:protect false} ["resources/main.js"

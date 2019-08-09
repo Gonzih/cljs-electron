@@ -1,4 +1,5 @@
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/Gonzih/feeds2imap.clj/blob/master/LICENSE.md) [![Build Status](https://travis-ci.org/Gonzih/cljs-electron.svg?branch=master)](https://travis-ci.org/Gonzih/cljs-electron)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/Gonzih/feeds2imap.clj/blob/master/LICENSE.md)
+[![CircleCI](https://circleci.com/gh/Gonzih/cljs-electron.svg?style=svg)](https://circleci.com/gh/Gonzih/cljs-electron)
 
 # Clojurified Electron
 
