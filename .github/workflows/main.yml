@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: circleci/clojure:lein-2.7.1
+      image: clojure:latest
     steps:
     - uses: actions/checkout@v1
     - name: Build
