@@ -6,11 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: circleci/clojure:lein-2.7.1
+      image: clojure:latest
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: lein do clean, cljsbuild once electron-dev, cljsbuild once frontend-dev, clean, cljsbuild once electron-release, cljsbuild once frontend-release
-      env:
-        LEIN_ROOT: nbd
-        JVM_OPTS: -Xmx3200m
+    - name: Build
+      run: make ci-build
