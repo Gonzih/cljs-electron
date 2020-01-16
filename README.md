@@ -1,5 +1,5 @@
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/Gonzih/feeds2imap.clj/blob/master/LICENSE.md)
-![Build](https://github.com/Gonzih/feeds2imap.clj/workflows/main/badge.svg)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/Gonzih/cljs-electron/blob/master/LICENSE.md)
+![Build](https://github.com/Gonzih/cljs-electron/workflows/CI/badge.svg)
 
 # Clojurified Electron
 
