@@ -6,7 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.520"]
                  [figwheel "0.5.19"]
-                 [figwheel-sidecar "0.5.18"]
+                 [figwheel-sidecar "0.5.19"]
                  [cider/piggieback "0.4.0"]
                  [reagent "0.8.1"]
                  [ring/ring-core "1.7.1"]]
