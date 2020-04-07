@@ -19,8 +19,24 @@ My attempt to recreate ClojureScript development workflow while developing deskt
 ```shell
 npm install electron -g # install electron binaries
 
+```
+
+### Terminal
+```shell
 lein cooper                      # compile cljs and start figwheel
 electron .                       # start electron from another terminal
+```
+
+### Emacs REPL
+```shell
+lein cljsbuild once
+```
+
+<kbd>M-x cider-jack-in-cljs</kbd>
+<kbd>figwheel</kbd>
+
+```shell
+electron .
 ```
 
 ## Releasing
